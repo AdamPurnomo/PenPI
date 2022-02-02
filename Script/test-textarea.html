@@ -1,0 +1,30 @@
+<html>
+<head>
+<script type="text/javascript">
+function file(){
+
+var fso;
+try { 
+fso=new ActiveXObject("Scripting.FileSystemObject"); 
+
+} catch (e) { 
+alert("no");
+return;
+} 
+
+alert("okay");
+var f1 = fso.createtextfile("C:\\1.txt",true);
+f1.write("this is a text file");  
+var openf1 = fso.OpenTextFile("1.txt");
+
+str = openf1.ReadLine();
+alert("the content is '" + str + "'");
+
+
+}
+</script>
+</head>
+<body>
+<button onclick='file()'>create file</button>
+</body>
+<html>

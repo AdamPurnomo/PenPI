@@ -1,0 +1,82 @@
+<html lang="en">
+
+<head>
+    <!-- Those meta make the capture of handwriting inputs easier on mobile devices -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="true"/>
+
+    <title>iCan 2018</title>
+
+    <link rel="stylesheet" href="file_transfer/examples.css">
+    <style>
+        myscript-math-web {
+            height: 100%;
+        }
+        textarea {
+            width: 100vw;
+            height: calc(50vh - 58px);
+        }
+
+        #pointerEvents {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+        }
+    </style>
+
+    <!-- As web components are not fully support -->
+    <script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="bower_components/pepjs/dist/pep.min.js"></script>
+    <!-- myscript-common-element is import to be used later -->
+    <link rel="import" href="bower_components/myscript-math-web/myscript-math-web.html">
+
+</head>
+
+<body>
+<div>
+    <myscript-math-web
+        applicationkey="ab85663a-91bf-429b-8730-faf4eaf3c7e0"
+        hmackey="f920e6c3-1411-4e93-acdd-deccc8000544">
+    </myscript-math-web>
+</div>
+
+    <textarea id="pointerEventsObject"></textarea>
+
+<div id="text">
+    <button class="classic-btn" id="pointerEvents">Process</button>
+    <script src="ink_data/mellow_1.js"></script>
+    <script type="text/javascript">
+        var a = document.getElementById("pointerEventsObject");
+        var b = "{ \"events\": [{    \"pointerType\": \"PEN\",    \"pointerId\": 1,"
+        a.value = b + x + y + t + p;
+
+        const component = document.querySelector('myscript-math-web');
+        const pointerEventsObjectElement = document.getElementById('pointerEventsObject');
+
+        document.getElementById('pointerEvents').addEventListener('click', function () {
+            const pointerEventsObject = JSON.parse(pointerEventsObjectElement.value);
+            console.log('Pointer events being processed', pointerEventsObject);
+            component.pointerEvents(pointerEventsObject);
+        });
+    </script>>
+</div>
+
+    <script src="/file_transfer/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <button class="classic-btn" id="refreshButton">Refresh</button>>
+    <script>
+        document.getElementById('refreshButton').addEventListener('click', function () {
+            $.getScript('ink_data/mellow_1.js');
+            //var a = document.getElementById("pointerEventsObject");
+            //a.value = null;
+            a.value = b + x + y + t + p;
+           // $("#text").load(location.href+" #text>*","");
+        });    
+      
+    </script>
+
+</body>
+
+</html>

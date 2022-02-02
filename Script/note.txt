@@ -1,0 +1,12 @@
+read raw ink data from (.txt / .js)
+						fetch  var
+set up UI for the demo  --> https://webdemo.myscript.com/views/math.html#
+
+root@188.166.221.35:/root/file_transfer
+
+pscp C:\Users\32354\Desktop\code\iCan\index.html root@188.166.221.35:/root/
+pscp C:\Users\32354\Desktop\code\iCan\mellow_1.js root@188.166.221.35:/root/ink_data/
+
+pscp root@188.166.221.35:/root/hoang_test.html C:\Users\32354\Desktop\code\iCan\final\hoang_test.html
+
+pscp root@188.166.221.35:/root/hoang/pos.js C:\Users\32354\Desktop\code\iCan\final\pos.js

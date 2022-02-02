@@ -1,0 +1,63 @@
+
+<html lang="en">
+
+<head>
+    <!-- Those meta make the capture of handwriting inputs easier on mobile devices -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="true"/>
+
+    <title>Pointer events</title>
+
+    <link rel="stylesheet" href="file_transfer/examples.css">
+    <style>
+        #pointerEvents {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+        }
+    </style>
+    <style>
+        myscript-math-web {
+            height: 100%;
+    }
+    </style>
+
+    <!-- As web components are not fully support -->
+    <script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="bower_components/pepjs/dist/pep.min.js"></script>
+    <!-- myscript-common-element is import to be used later -->
+    <link rel="import" href="bower_components/myscript-math-web/myscript-math-web.html">
+    </head>
+
+<body>
+<div>
+    <myscript-math-web
+        applicationkey="ab85663a-91bf-429b-8730-faf4eaf3c7e0"
+        hmackey="f920e6c3-1411-4e93-acdd-deccc8000544">
+    </myscript-math-web>
+    <textarea id="pointerEventsObject">{ "events": [{
+    "pointerType": "PEN",
+    "pointerId": 1,
+    </textarea>
+    <button class="classic-btn" id="pointerEvents">Process</button>
+</div>
+    <script src="ink_data/testink.js"></script>>
+    <script>
+        var a = document.getElementById("pointerEventsObject");
+        a.value = a.value + x + y + t + p;
+        const component = document.querySelector('myscript-math-web');
+        const pointerEventsObjectElement = document.getElementById('pointerEventsObject');
+
+        document.getElementById('pointerEvents').addEventListener('click', function () {
+            const pointerEventsObject = JSON.parse(pointerEventsObjectElement.value);
+            console.log('Pointer events being processed', pointerEventsObject);
+            component.pointerEvents(pointerEventsObject);
+        });
+    </script>
+</body>
+
+</html>
+

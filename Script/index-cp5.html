@@ -1,0 +1,73 @@
+<html lang="en">
+
+<head>
+    <!-- Those meta make the capture of handwriting inputs easier on mobile devices -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="true"/>
+
+    <title>iCan2018</title>
+
+    <link rel="stylesheet" href="file_transfer/examples.css">
+    <style>
+        myscript-common-element {
+            height : 50vh;
+        }
+        textarea {
+            width: 100vw;
+            height: calc(50vh - 58px);
+        }
+
+        #pointerEvents {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+        }
+
+        nav {
+            padding: 0 12px;
+            line-height: 52px;
+        }
+    </style>
+
+    <!-- As web components are not fully support -->
+    <script src="bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="bower_components/pepjs/dist/pep.min.js"></script>
+    <!-- myscript-common-element is import to be used later -->
+    <link rel="import" href="bower_components/myscript-common-element/myscript-common-element.html">
+    <link rel="import" href="bower_components/paper-toast/paper-toast.html">
+    <link rel="import" href="bower_components/myscript-math-web/myscript-math-web.html">
+</head>
+
+<body>
+    <nav>
+            <button class="classic-btn" onclick="myscriptMathWeb.undo()">undo</button>
+            <button class="classic-btn" onclick="myscriptMathWeb.redo()">redo</button>
+            <button class="classic-btn" onclick="myscriptMathWeb.clear()">clear</button>
+            <button class="classic-btn" onclick="myscriptMathWeb.export_()">export</button>
+            <button class="classic-btn" onclick="myscriptMathWeb.convert()">convert</button>
+        </nav>
+        <paper-toast class="fit-top"></paper-toast>
+        <!-- Please change applicationkey and hmackey below with those send by mail during your registration. You can re-access them by connecting to your dashboard at developer.myscript.com with your myscript account -->
+        <myscript-math-web scheme="https"
+                           host="webdemoapi.myscript.com"
+                            applicationkey="ab85663a-91bf-429b-8730-faf4eaf3c7e0"
+                            hmackey="f920e6c3-1411-4e93-acdd-deccc8000544"
+                           ondemand
+                           disablecontrols
+                           touch-action="none">
+        </myscript-math-web>
+        <script>
+            const myscriptMathWeb = document.querySelector('myscript-math-web');
+            const paperToast = document.querySelector('paper-toast');
+            myscriptMathWeb.addEventListener('exported', (event) => {
+                paperToast.text = `Recognition object contains : ${JSON.stringify(event.detail)}`;
+                paperToast.fitIn = paperToast.show();
+            });
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#btnrefreshdata").click(function() {
+                $.ajax({
+                    type: "GET",
+                    url: "input-1.txt",
+                    contentType: "text",
+                    success: function(data) {
+                        $("#noofusersTD")[0].innerHTML = data;
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="login_form" runat="server">
+    <table id="tbl">
+        <tr>
+            <td>
+                DynamicData Table Using Jquery
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Current Users
+            </td>
+            <td id="noofusersTD">
+                0
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" id="btnrefreshdata" value="FetchData" />
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

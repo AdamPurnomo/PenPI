@@ -1,0 +1,170 @@
+section {
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+section article {
+    flex-grow: 2;
+}
+
+section aside {
+    flex: none;
+}
+
+aside {
+    width: 400px;
+}
+
+aside myscript-math-exports {
+    height: 250px;
+    background-color: #EBEDEE;
+    border-bottom: 1px solid #dddddd;
+}
+
+.ooo-math::before {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+    margin-right: 5px;
+    content: "";
+    -webkit-vertical-align: middle;
+    vertical-align: middle;
+    background-image: url(../img/demo/WebDemoIcon-Math-Black.svg);
+}
+
+.ooo-action-bar {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    padding: 8px;
+    background-color: #EBEDEE;
+}
+
+.dcg-container {
+    background: transparent url(../img/partners/PoweredByDesmos.png) bottom right no-repeat;
+}
+
+.graph {
+    height: calc(100% - 318px);
+    width: 100%;
+}
+
+.ooo-result-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.ooo-result-nav li:hover,
+.ooo-result-nav li:focus {
+    background-color: #1A9FFF;
+    color: #ffffff;
+}
+
+.ooo-result-nav li.ooo-selected {
+    background: #116FB3;
+    color: #ffffff;
+}
+
+.ooo-result-nav li > a {
+    display: inline-block;
+    padding: 14px;
+}
+
+.write-here {
+    width: calc(100vw - 400px);
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+    header {
+        display: none;
+    }
+
+    section {
+        display: block;
+        height: 100%;
+    }
+
+    section article {
+        margin-top: 48px;
+        height: calc(100% - 48px);
+    }
+
+    section aside {
+        position: absolute;
+        top: 0;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    aside myscript-math-exports {
+        height: 99px !important;
+    }
+
+    .ooo-action-bar {
+        display: none;
+    }
+
+    .graph {
+        display: none;
+    }
+
+    .write-here {
+        width: 100vw;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    header {
+        display: none;
+    }
+
+    section {
+        display: block;
+        height: 100%;
+    }
+
+    section article {
+        margin-top: 48px;
+        height: calc(100% - 48px);
+    }
+
+    section aside {
+        position: absolute;
+        top: 0;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    aside myscript-math-exports {
+        width: 100%;
+        height: 99px !important;
+    }
+
+    .ooo-action-bar {
+        display: none;
+    }
+
+    .graph {
+        display: none;
+    }
+
+    .write-here {
+        width: 100vw;
+    }
+}
+
+@media (max-width: 361px) and (orientation: portrait) {
+    body {
+        font-size: 1em;
+    }
+}
